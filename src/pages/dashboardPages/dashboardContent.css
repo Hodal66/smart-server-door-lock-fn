@@ -1,0 +1,59 @@
+.container{
+    display: grid;
+    grid-template-columns:1fr 4fr;
+}
+.AllDataOverViewContainer{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    margin-right: 5rem;
+    gap:2rem;
+    
+}
+.availableContent{
+    display:flex;
+    flex-direction:column;
+    justify-content:center; 
+    border-radius: 10px;
+    align-items:center;
+    padding:1.5rem;
+    box-shadow: var(--box-shadow);
+}
+.availableContent h1{
+    color:var(--primary-color);
+}
+.userListContainer img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+
+}
+.userListContainer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+}
+.dataInTable{
+    background-color:var(--color-secondary);
+    /* background-color: red; */
+    margin:1rem 5rem 0rem 0rem;
+    padding:1rem 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+
+.actionContainerButtons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+}
+.editButton{
+    cursor: pointer;
+    color:var(--primary-color);
+}
+.deleteButton{
+    cursor: pointer;
+    color:var(--color-danger)
+}

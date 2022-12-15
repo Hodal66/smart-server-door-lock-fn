@@ -5,7 +5,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
 import InfoIcon from "@mui/icons-material/Info";
-import { Box, Button, ButtonGroup, IconButton, InputBase } from "@mui/material";
+import { Button, ButtonGroup, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 function NavigationBar() {
   // let navigation = useNavigate();
@@ -28,7 +28,7 @@ function NavigationBar() {
         <div className="logoName">
           <span>
             <h2>
-              <span className="serverText">Server </span>Smart Lock
+              Server Smart <span className="serverText">Door Lock</span>
             </h2>{" "}
           </span>
         </div>

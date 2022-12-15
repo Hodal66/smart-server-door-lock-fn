@@ -1,13 +1,12 @@
 import React from "react";
 import HomePage from "./pages/home/HomePage";
-import AdminPage from "./pages/adminPage/AdminPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/navigationBar/NavigationBar";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import LoginPage from "./pages/users/loginPage/LoginPage";
 import RegisterPage from "./pages/users/registerPage/RegisterPage";
-
+import AdminPage from "./pages/dashboardPages/adminPage/AdminPage";
 function App() {
   return (
     <div>
