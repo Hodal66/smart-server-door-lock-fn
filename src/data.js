@@ -1,32 +1,41 @@
-// export const serverRows = [
-//   {
-//     no:1,id: 1,
-//     no: "1",
-//     fullName: "Muheto Hodal",
-//     email: "mhthodol@gmail.com",
-//     serverNo: "24033",
-//     openedDate: "20-02-2022",
-//     closedDate: "03-11-2022",
-//   },
-//   {
-//     no:1,id: 2,
-//     no: "2",
-//     fullName: "Jean Claude",
-//     email: "mhthodol@gmail.com",
-//     serverNo: "44033",
-//     openedDate: "03-03-2022",
-//     closedDate: "03-12-2022",
-//   },
-//   {
-//     no:1,id: 3,
-//     no: "3",
-//     fullName: "Muneza Keza",
-//     email: "mhthodol@gmail.com",
-//     serverNo: "56033",
-//     openedDate: "11-02-2022",
-//     closedDate: "03-02-2022",
-//   },
-// ];
+export const serverRowsContent = [
+  {
+    no:1,
+    id: 1,
+    serverName:"Server 1",
+    serverNo: "24033",
+  },
+  {
+    no:2,
+    id: 2,
+    serverName:"Server 2",
+    serverNo: "24020",
+  },
+  {
+    no:3,
+    id: 3,
+    serverName:"Server 3",
+    serverNo: "24020",
+  },
+  {
+    no:4,
+    id: 4,
+    serverName:"Server 4",
+    serverNo: "24020",
+  },
+  {
+    no:5,
+    id: 5,
+    serverName:"Server 5",
+    serverNo: "24020",
+  },
+  {
+    no:6,
+    id: 6,
+    serverName:"Server 6",
+    serverNo: "24020",
+  },
+];
 
 export const serverRows = [
   {

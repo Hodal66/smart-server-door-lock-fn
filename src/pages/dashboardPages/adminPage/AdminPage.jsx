@@ -62,22 +62,22 @@ function AdminPage() {
     },
   ];
   return (
-    <div className="container">
+    <div className="Usercontainer">
       {/* <UserSidebarDashBoard /> */}
       <AdminSideBar />
       <div className="contentContainer">
         <div className="AllDataOverViewContainer">
           <div className="availableContent">
             <h3>All Serves Available</h3>
-            <h1>20</h1>
+            <p>20</p>
           </div>
           <div className="availableContent">
             <h3>All Users Available</h3>
-            <h1>12</h1>
+            <p>12</p>
           </div>
           <div className="availableContent">
             <h3>All Active Servers </h3>
-            <h1>5</h1>
+            <p>5</p>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ function NavigationBar() {
   return (
     <div className="NavigationContainer">
       <div className="leftSideNavContainer">
-        <Link to="/home">
+        <Link to="/">
           <div className="logoIconContainer">
             <ButtonGroup size="large">
               <IconButton

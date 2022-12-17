@@ -5,8 +5,8 @@ import loginPageBackGroundImage from "../../../assets/images/LoginBackgroundImag
 import { Link } from "react-router-dom";
 function LoginPage() {
   return (
-    <div className="container">
-      <div className="login-pageContainer">
+    <div className="Usercontainer">
+      <div className="user-pageContainer">
         <div className="leftImageContainer">
           <img src={loginPageBackGroundImage} alt="" />
         </div>

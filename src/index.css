@@ -9,6 +9,7 @@
 }
 :root{
   --color-primary: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  --primary-coary: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   --primary-color:#3F4AAB;
   --color-secondary:aliceblue;
   --color-second-background:#FFFCFC;
@@ -68,6 +69,7 @@ body{
   background-color: var(--second-box-shadow);
   width: 200px;
   box-shadow:var(--box-shadow);
+  margin-left: -8rem;
 }
 .adminTextContainer span{
   color:var(--color-third);

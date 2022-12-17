@@ -1,12 +1,12 @@
 import React from "react";
 import "../user.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import loginPageBackGroundImage from "../../../assets/images/LoginBackgroundImage.png";
 // import unlockImage from "../../../assets/images/unlockImage.jpeg";
 function RegisterPage() {
   return (
-    <div className="container">
-      <div className="login-pageContainer">
+    <div className="Usercontainer">
+      <div className="user-pageContainer">
         <div className="leftImageContainer">
           <img src={loginPageBackGroundImage} alt="" />
         </div>
