@@ -35,9 +35,9 @@ body{
   line-height:1.7;
   overflow-x:hidden;
 }
-/* .icon{
-  background-color:var(--primary-color);
-} */
+.icon{
+ color:var(--color-green-200);
+}
 .AdminIcon{
   display:flex;
   align-items:center;
@@ -83,4 +83,26 @@ body{
 .adminTextContainer h3:hover{
   color:var(--color-secondary);
 
+}
+
+button {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.35rem 0.5rem;
+  background-color: var(--color-primary);
+  color: #1a202c;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: var(--primary-color);
+  color: var(--color-green-200);
+}
+.deleteButton{
+ color: var(--color-danger);
 }

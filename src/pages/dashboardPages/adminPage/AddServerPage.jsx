@@ -2,27 +2,35 @@ import React from "react";
 import { useState } from "react";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
 import { serverRowsContent } from "../../../data";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-function AddServer() {
-  const [serverContent, setServerContent] = useState(serverRowsContent);
-  //Just for code scalability
-  let newValue=setServerContent();
-  console.log(newValue);
+import {v4 as uuid} from "uuid"
+import { useNavigate} from "react-router-dom";
+
+function AddServerPage() {
+  const [serverContent, setServerContent]=useState(serverRowsContent)
+  const [serverNameState, setServerNameState]= useState("");
+  const [serverCodeState, setServerCodeState]=useState("");
+
+
+  const history =useNavigate();
+ 
+
   const handleSubmitForm = (event) => {
+   
     event.preventDefault();
-    const name = event.target.elements.serverName.value;
-    const code = event.target.elements.serverCode.value;
-    // console.log(`Server name is ${name} while server code is ${code}`);
-    const newServerList = {
-      id: serverContent.length + 1,
-      no: serverContent.length + 1,
-      serverName: name,
-      serverNo: code,
-    };
-    serverContent.push(newServerList);
-    // toast("Server Saved Successfully !!!");
-    toast.success(` ${name} Is saved successull`);
+    const id = uuid();
+    let uniqueId = id.split(0,2);
+    console.log("The full Id is :",id);
+    console.log("The specific Id is ", uniqueId);
+    const Name = serverNameState;
+    const code = serverCodeState;
+
+    serverContent.push({id:uniqueId, serverName:Name, serverCode:code});
+    console.log(serverContent)
+    alert("welldone!!!")
+    history("/server-admin");
+    
   };
 
   return (
@@ -32,7 +40,7 @@ function AddServer() {
       <div className="addServerContainer">
         <div className="contentContainer serverContentContainer">
           <div className="dataInTable addServer">
-            <form action="" onSubmit={handleSubmitForm}>
+            <form>
               <div className="titleHeader addServerHeader">
                 <h2>Add Server</h2>
               </div>
@@ -43,6 +51,7 @@ function AddServer() {
                     type="text"
                     name="serverName"
                     id="serverName"
+                    onChange={(e)=>setServerNameState(e.target.value)}
                     className="serverName"
                   />
                 </div>
@@ -52,10 +61,11 @@ function AddServer() {
                     type="text"
                     name="serverCode"
                     id="serverCode"
+                    onChange={(e)=>setServerCodeState(e.target.value)}
                     className="serverCode"
                   />
                 </div>
-                <button className="editButton addServerButton">Save</button>
+                <button className="editButton addServerButton" onClick={handleSubmitForm}>Save</button>
               </div>
               <ToastContainer
                 position="top-center"
@@ -76,4 +86,4 @@ function AddServer() {
   );
 }
 
-export default AddServer;
+export default AddServerPage;

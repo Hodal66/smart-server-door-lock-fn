@@ -28,7 +28,7 @@ function NavigationBar() {
         <div className="logoName">
           <span>
             <h2>
-              Server Smart <span className="serverText">Door Lock</span>
+              SMART SERVER <span className="serverText">Door Lock</span>
             </h2>{" "}
           </span>
         </div>
@@ -42,11 +42,13 @@ function NavigationBar() {
           aria-label="outlined primary button group"
           className="homeIconsContainer"
         >
+          <Link to="/user-dashboard">
           <div className="darkModeIcon">
             <IconButton aria-label="NightlightIcon">
               <NightlightIcon className="icon" />
             </IconButton>
           </div>
+          </Link>
           <div className="homeIcon">
             <Link to="/admin-page">
               <IconButton aria-label="AddHomeWorkIcon">
@@ -56,9 +58,11 @@ function NavigationBar() {
             {/* <p>Home</p> */}
           </div>
           <div className="aboutUsIcon">
+            <Link to="/register-page">
             <IconButton aria-label="InfoIcon">
               <InfoIcon className="icon" />
             </IconButton>
+            </Link>
 
             {/* <p>About Us</p> */}
           </div>

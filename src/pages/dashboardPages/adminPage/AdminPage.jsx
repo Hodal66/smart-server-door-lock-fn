@@ -14,14 +14,14 @@ function AdminPage() {
   };
   const columns = [
     {
-      field: "no",
-      headerName: "NO",
-      width: 50,
+      field: "id",
+      headerName: "ID NO",
+      width: 100,
     },
     {
       field: "userName",
       headerName: "USER NAME",
-      width: 200,
+      width: 300,
       renderCell: (params) => {
         return (
           <div className="userListContainer">
@@ -38,7 +38,7 @@ function AdminPage() {
     {
       field: "actions",
       headerName: "ACTIONS",
-      width: 150,
+      width: 300,
       renderCell: (params) => {
         return (
           <div className="actionContainerButtons">

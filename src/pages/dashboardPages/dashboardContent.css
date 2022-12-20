@@ -73,7 +73,7 @@
     color:var(--color-danger)
 }
 .serverContentContainer{
-    width: 80%;
+    width: 100%;
 }
 .titleHeader{
     margin-top: 2rem 0;
@@ -95,4 +95,10 @@
 }
 .addServerContainer{
     margin-top: 3rem;
+}
+.user-message{
+    margin: 3rem 0rem;
+}
+.togleOnOff{
+    width: 100%;
 }

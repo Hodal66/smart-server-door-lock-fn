@@ -14,16 +14,20 @@ function AdminSideBar() {
           </h3>
         </div>
         </Link>
-        <Link to="/server" >
+        <Link to="/server-admin" >
         <div  className="serverIconContainer AdminIcon">
           <StorageIcon />
           <p>Server</p>
         </div>
         </Link>
+
+        <Link to="/user-admin" >
         <div className="userIconContainer AdminIcon">
           <PeopleAltIcon />
           <p>Users</p>
         </div>
+        </Link>
+
         <div className="userIconContainer AdminIcon">
           <AdminPanelSettingsIcon />
           <p>Settings</p>

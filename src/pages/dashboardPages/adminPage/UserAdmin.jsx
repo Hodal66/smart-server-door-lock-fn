@@ -1,5 +1,5 @@
 import React from "react";
-import { serverRowsContent } from "../../../data";
+import { userRows } from "../../../data";
 import { DataGrid } from "@mui/x-data-grid";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
 import { ButtonBase } from "@mui/material";
@@ -8,38 +8,49 @@ import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function ServerPage() {
-  const [serverContent, setServerContent]=useState(serverRowsContent);
+function UserAdmin() {
+  const [serverContent, setServerContent]=useState(userRows);
   const handleServerEdit =(id)=>{
     setServerContent(serverContent.filter((item)=> item.id !==id))
   }
-const hundleServerEdit =(id, name, code)=>{
-  console.log("the id to update is_____", id);
-  console.log("the name to update is_____", name);
-  console.log("the code to update is_____", code);
-  localStorage.setItem("idToUpdate",id);
-  localStorage.setItem("serverName",name);
-  localStorage.setItem("serverCode",code);
 
-}
+  const hundleEdit=(id, name, profile, email)=>{
+    localStorage.setItem("", id);
+    localStorage.setItem("", name);
+    localStorage.setItem("", profile);
+    localStorage.setItem("", email);
+
+  }
+
+
+
 
 
   const columns = [
     {
       field: "id",
-      headerName: "NO",
+      headerName: "USER ID",
       width: 100,
     },
     {
-      field: "serverNo",
-      headerName: "SERVER NAME",
-      width: 300,
-    },
+        field: "userName",
+        headerName: "USER NAME",
+        width: 300,
+        renderCell: (params) => {
+          return (
+            <div className="userListContainer">
+              <img src={params.row.avatar} alt={params.row.userName} />
+              <span>{params.row.userName}</span>
+            </div>
+          );
+        },
+      },
     {
-      field: "serverName",
-      headerName: "SERVER NAME",
+      field: "email",
+      headerName: "EMAIL",
       width: 300,
     },
+  
     {
       field: "actions",
       headerName: "ACTIONS",
@@ -51,7 +62,7 @@ const hundleServerEdit =(id, name, code)=>{
               <div className="editButton">
                 <Box>
                   <ButtonBase>
-                    <Edit onClick={()=>hundleServerEdit(params.row.id, params.row.serverName, params.row.serverNo)}/>
+                    <Edit onClick={()=>hundleEdit(params.row.id, params.row.userName, params.row.avatar , params.row.email)}/>
                   </ButtonBase>
                 </Box>
               </div>
@@ -73,9 +84,9 @@ const hundleServerEdit =(id, name, code)=>{
       {/* <UserSidebarDashBoard /> */}
       <AdminSideBar />
       <div className="serverDashboardContainer">
-        <Link to="/add-server-page">
+        <Link to="/add-user-page">
         <div className="addButton">
-          <button className="addServerButton">Add Server</button>
+          <button className="addServerButton">Add User</button>
         </div>
         </Link>
       <div className="contentContainer serverContentContainer">
@@ -95,4 +106,4 @@ const hundleServerEdit =(id, name, code)=>{
   );
 }
 
-export default ServerPage;
+export default UserAdmin;
