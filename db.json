@@ -1,34 +1,24 @@
 {
   "serverRows": [
     {
-      "id": "1",
-      "serverName": "Server 1",
-      "serverNo": "24033"
+      "serverNameState": "server 2",
+      "serverCodeState": "345676",
+      "id": 2
     },
     {
-      "id": "2",
-      "serverName": "Server 2",
-      "serverNo": "24020"
+      "serverNameState": "qwerqe",
+      "serverCodeState": "333333",
+      "id": 3
     },
     {
-      "id": 3,
-      "serverName": "Server 3",
-      "serverNo": "24020"
+      "serverNameState": "Server 3",
+      "serverCodeState": "303940",
+      "id": 4
     },
     {
-      "id": 4,
-      "serverName": "Server 4",
-      "serverNo": "24020"
-    },
-    {
-      "id": 5,
-      "serverName": "Server 5",
-      "serverNo": "24020"
-    },
-    {
-      "id": 6,
-      "serverName": "Server 6",
-      "serverNo": "24020"
+      "serverNameState": "byakunze mwa",
+      "serverCodeState": "123456",
+      "id": 5
     }
   ],
   "allDashboardContentRow": [

@@ -1,35 +1,29 @@
 import React from "react";
 import { useState } from "react";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
-import { serverRowsContent } from "../../../data";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {v4 as uuid} from "uuid"
+// import {v4 as uuid} from "uuid"
 import { useNavigate} from "react-router-dom";
 
 function AddServerPage() {
-  const [serverContent, setServerContent]=useState(serverRowsContent)
   const [serverNameState, setServerNameState]= useState("");
   const [serverCodeState, setServerCodeState]=useState("");
-
-
+  const [validation, setValidation]=useState("");
   const history =useNavigate();
- 
+  const addedServerContent ={serverNameState,serverCodeState};
 
   const handleSubmitForm = (event) => {
-   
     event.preventDefault();
-    const id = uuid();
-    let uniqueId = id.split(0,2);
-    console.log("The full Id is :",id);
-    console.log("The specific Id is ", uniqueId);
-    const Name = serverNameState;
-    const code = serverCodeState;
-
-    serverContent.push({id:uniqueId, serverName:Name, serverCode:code});
-    console.log(serverContent)
-    alert("welldone!!!")
+   fetch("http://localhost:8000/serverRows",{
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(addedServerContent),
+   }).then((response)=>{
+    alert("Server Saved successfully");
     history("/server-admin");
+  
+   }).catch((err)=>console.log(err.message))
+   
   };
 
   return (
@@ -39,45 +33,47 @@ function AddServerPage() {
       <div className="addServerContainer">
         <div className="contentContainer serverContentContainer">
           <div className="dataInTable addServer">
-            <form>
+            <form onSubmit={handleSubmitForm}>
               <div className="titleHeader addServerHeader">
                 <h2>Add Server</h2>
               </div>
               <div className="EditFormContainer">
                 <div className="inputContainer serverName">
-                  <label htmlFor="serverName">Server Name</label>
+                  <label htmlFor="serverName">Server Name <span className="text-danger">(*)</span></label>
                   <input
                     type="text"
                     name="serverName"
                     id="serverName"
-                    onChange={(e)=>setServerNameState(e.target.value)}
+                    value={serverNameState}
+                    placeholder="eg: Server 1"
                     className="serverName"
+                    onMouseDown={(e)=>setValidation(true)}
+                    onChange={(e)=>setServerNameState(e.target.value)}
                   />
+                  {serverNameState.length===0 && validation && <p className="text-danger">Enter Server Name</p>}
                 </div>
                 <div className="inputContainer serverCode">
-                  <label htmlFor="serverCode">Server Code</label>
+                  <label htmlFor="serverCode">Server Code <span className="text-danger">(*)</span></label>
                   <input
                     type="text"
                     name="serverCode"
                     id="serverCode"
-                    onChange={(e)=>setServerCodeState(e.target.value)}
+                    value={serverCodeState} 
+                    placeholder="eg: 202303"
                     className="serverCode"
+                    onMouseDown={(e)=>setValidation(true)}
+                    onChange={(e)=>setServerCodeState(e.target.value)}
                   />
+                 
+                  {(serverCodeState.length === 0 || serverCodeState.length !==6)&& validation && <p className="text-danger">Enter Server Code must 5 digits</p>}
                 </div>
-
-                <button className="editButton addServerButton" onClick={handleSubmitForm}>Save</button>
+                <input
+                              type="submit"
+                              className="form-control btn btn-primary"
+                              value="Add"
+                            />
               </div>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-              />
+            
             </form>
           </div>
         </div>

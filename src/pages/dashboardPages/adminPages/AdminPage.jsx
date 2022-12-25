@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
 import "../dashboardContent.css";
 
 function AdminPage() {
   const [allDetails, setEmpData] = useState("")
   const navigate=useNavigate();
-  const {AllDetalsId} = useParams();
+
   useEffect(()=>{
     fetch("http://localhost:8000/allDashboardContentRow").then((res)=>{return res.json()}).then((resp)=>{
       setEmpData(resp);
