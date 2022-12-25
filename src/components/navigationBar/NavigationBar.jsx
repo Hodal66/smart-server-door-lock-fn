@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import "./navigation.css";
 // import { useNavigate } from "react-router-dom";
 import StorageIcon from "@mui/icons-material/Storage";
@@ -7,7 +7,11 @@ import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
 import InfoIcon from "@mui/icons-material/Info";
 import { Button, ButtonGroup, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 function NavigationBar() {
+  const [logout, setLogout]=useState("");
+  const emailLocalStorage = localStorage.getItem("UserEmail");
+
   // let navigation = useNavigate();
 
   return (
@@ -67,11 +71,16 @@ function NavigationBar() {
             {/* <p>About Us</p> */}
           </div>
           <div className="goToLoginPage">
-            <Link to="/login-page">
+           
+            
+              {emailLocalStorage ? <Button variant="contained" className="loginButton">
+              <Logout/>
+              </Button>:
+           <Link to="/login-page">
               <Button variant="contained" className="loginButton">
                 Login
               </Button>
-            </Link>
+            </Link> }
           </div>
         </ButtonGroup>
       </div>

@@ -30,7 +30,6 @@ function AddServerPage() {
     console.log(serverContent)
     alert("welldone!!!")
     history("/server-admin");
-    
   };
 
   return (
@@ -65,6 +64,7 @@ function AddServerPage() {
                     className="serverCode"
                   />
                 </div>
+
                 <button className="editButton addServerButton" onClick={handleSubmitForm}>Save</button>
               </div>
               <ToastContainer

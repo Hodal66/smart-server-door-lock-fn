@@ -87,7 +87,7 @@ function RegisterPage() {
               />
                {errors.password && touched.password && <p className="error">{errors.password}</p>}
             </div>
-            <button className="registerButton" disabled={isSubmitting} type="submit">Register</button>
+            <button className="registerButton" disabled={isSubmitting} type="submit">Login</button>
           </form>
         </div>
       </div>

@@ -1,0 +1,16 @@
+.detailImage{
+    width: 20%;
+    height: 20%;
+}
+.deatails-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    color:var(--color-secondary)
+
+}
+.deatails-container span{
+    font-weight: 100;
+}

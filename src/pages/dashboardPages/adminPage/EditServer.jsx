@@ -1,42 +1,17 @@
-import React,{useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import React,{ useState} from "react";
+// import { useNavigate } from "react-router-dom";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
-import { serverRowsContent } from "../../../data";
-import {v4 as uuid} from "uuid"
+// import { serverRowsContent } from "../../../data";
 
 function EditServer() {
-  const [serverContent, setServerContent]=useState(serverRowsContent);
+  // const [serverContent, setServerContent]=useState(serverRowsContent);
   const [serverName, setServerName] = useState("");
   const [serverCode, setServerCode] = useState("");
-  const [idToUpdate, setIdToUpdate]= useState("");
+  // const [idToUpdate, setIdToUpdate]= useState("");
 
-  const history = useNavigate();
+  // const history = useNavigate();
+const hundleSubmitEditServer=()=>{
 
-
-
-  const index = serverRowsContent.map((item)=>{
-    return item.id
-  // eslint-disable-next-line no-undef
-  }).indexOf(id);
-  console.log("Id to update is : ", index);
-
-  const hundleSubmitEditServer =(event)=>{
-  event.preventDefault();
-const AllServerContent = serverContent[index];
-AllServerContent.id = idToUpdate;
-AllServerContent.serverName = serverName;
-AllServerContent.serverNo = serverCode;
-
-const useEffect=(() => {
-  return () => {
-    setServerName(localStorage,"serverName");
-    setServerCode(localStorage,"serverCode");
-    setIdToUpdate(localStorage,"idToUpdate");
-
-    history("/user-admin");
-
-  };
-}, [idToUpdate])
 }
 
   return (
@@ -70,7 +45,7 @@ const useEffect=(() => {
                 name="serverCode"
                 id="serverCode"
                 className="serverCode"
-                value="000099"
+                value={serverCode}
                 onChange={(e)=>setServerCode(e.target.value)}
                 
               />

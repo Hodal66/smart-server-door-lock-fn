@@ -14,9 +14,13 @@ function LoginPage() {
     console.log("The current Password is : ",values.password);
   
     if(values.email === ExistingUsers[0].email && values.password === ExistingUsers[0].password){
+      localStorage.setItem("UserEmail",`${values.email}`)
+      localStorage.setItem("UserPassword",`${values.password}`)
       history("/user-admin");
     }else if(values.email === ExistingUsers[1].email && values.password === ExistingUsers[1].password){
-      history("/user-dashboard");
+      localStorage.setItem("UserEmail",`${values.email}`)
+      localStorage.setItem("UserPassword",`${values.password}`)
+      history("/admin-page");
     }
     else{
       alert("You are not allowed to open the server")
@@ -86,7 +90,7 @@ function LoginPage() {
               />
               {errors.password && touched.password && <p className="error">{errors.password}</p>}
             </div>
-            <button className="registerButton" disabled={isSubmitting} type="submit">Register</button>
+            <button className="registerButton" disabled={isSubmitting} type="submit">Login</button>
           </form>
         </div>
       </div>

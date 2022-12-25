@@ -40,7 +40,7 @@ body{
 }
 .AdminIcon{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
   gap:2rem;
   padding: 5% 10%;
@@ -105,4 +105,7 @@ button:hover{
 }
 .deleteButton{
  color: var(--color-danger);
+}
+.btn{
+  margin-right: 1rem;
 }

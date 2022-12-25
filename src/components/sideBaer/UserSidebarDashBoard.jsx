@@ -1,7 +1,7 @@
 import React from "react";
 import StorageIcon from "@mui/icons-material/Storage";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 function UserSidebarDashBoard() {
   return (
     <div>
@@ -21,8 +21,8 @@ function UserSidebarDashBoard() {
         {/* </Link> */}
 
         <div className="userIconContainer AdminIcon">
-          <AdminPanelSettingsIcon />
-          <p>Settings</p>
+          <LiveHelpIcon />
+          <p>Help</p>
         </div>
       </section>
     </div>

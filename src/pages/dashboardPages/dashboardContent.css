@@ -10,6 +10,7 @@
 .AllDataOverViewContainer{
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
+    margin-top: 2rem;
  
     gap:1rem;
 }
@@ -17,14 +18,21 @@
     display:flex;
     flex-direction:column;
     justify-content:center; 
+    align-items: center;
     border-radius: 10px;
     align-items:center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     box-shadow: var(--box-shadow);
     scroll-behavior:none;
 }
+.availableContent h3{
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: row;
+   
+}
 .availableContent p{
-    font-size: large;
+    font-size: xx-large;
     font-weight: 900;
     color:var(--primary-color);
 }
@@ -101,4 +109,11 @@
 }
 .togleOnOff{
     width: 100%;
+}
+.deatails-container{
+    background-color: var(--primary-color);
+}
+.detailImage{
+    width: 60%;
+    height: 10%;
 }

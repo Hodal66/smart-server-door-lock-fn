@@ -2,9 +2,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import UserSidebarDashBoard from '../../../components/sideBaer/UserSidebarDashBoard';
+import AdminSideBar from '../../../components/sideBaer/AdminSideBar';
 
-function UserPage() {
+function ServerPage() {
   const [empData, setEmpData] = useState("")
   const navigate=useNavigate();
   useEffect(()=>{
@@ -16,14 +16,29 @@ function UserPage() {
 
   },[])
 
-  const goToSwitchServerOnOff =(event,id)=>{
+  const LoadEdit =(event,id)=>{
     event.preventDefault();
     navigate(`/server/${id}`)
   }
-  
+  const RemoveFunction =(event,id)=>{
+    event.preventDefault();
+    if(window.confirm("Do you want to Remove ?"));
+    
+    fetch(" http://localhost:8000/serverRows"+id,{
+      method: "DELETE",
+
+    })
+      .then((res) => {
+        alert("data removed successfully");
+        window.location.reload()
+
+      })
+      .then((err) => {console.log(err.message)});
+  };
+ 
   return (
     <div className='Usercontainer'>
-       <UserSidebarDashBoard/>
+       <AdminSideBar />
       <div className="serverDashboardContainer ">
         <Link to="/add-server-page">
         <div className="addButton">
@@ -49,7 +64,8 @@ function UserPage() {
                       <td>{item.serverNo}</td>
                       <td>
                         <React.Fragment>
-                          <a onClick={(event)=>goToSwitchServerOnOff(event,item.id)} className='btn btn-primary'>Switch Server</a>
+                          <a onClick={(event)=>LoadEdit(event,item.id)} className='btn btn-success'>Edit</a>
+                      <a onClick={(event)=>RemoveFunction(event,item.id)} className='btn btn-danger'>Delete</a>
                       </React.Fragment>
                       </td>
                     </tr>
@@ -63,35 +79,4 @@ function UserPage() {
   )
 }
 
-export default UserPage
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
-
-
-// function ServerPage() {
-  
-
-
-  
-//   return (
-//     <div className="Usercontainer">
-//       <AdminSideBar/>
-      
-//     </div>
-//   );
-// }
-
-// export default ServerPage;
+export default ServerPage

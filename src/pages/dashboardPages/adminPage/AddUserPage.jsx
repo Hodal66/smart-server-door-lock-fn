@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { userRows } from "../../../data";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {v4 as uiid} from "uuid";
 import {useNavigate} from "react-router-dom";
