@@ -19,6 +19,7 @@ import AddUserPage from "./pages/dashboardPages/adminPage/AddUserPage";
 import LoginPage from "./pages/users/loginPage/LoginPage";
 import UserPage from "./pages/dashboardPages/userPage/UserPage";
 import AdminServerDetails from "./pages/dashboardPages/adminPage/AdminServerDetails";
+import SwitchServer from "./pages/dashboardPages/userPage/SwitchServer";
 
 function App() {
   return (
@@ -37,8 +38,11 @@ function App() {
           <Route path="/admin-server/details/:AllDetalsId" element={<AdminServerDetails/>} />
           <Route path="/user-admin" element={<UserAdmin/>} />
           <Route path="/server/:editServerId" element={<EditServer />} />
+
           {/* USER PART ROUTE */}
           <Route path="/user-dashboard" element={<UserPage/>} />
+          <Route path="/switch-server/:serverId" element={<SwitchServer/>} />
+
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

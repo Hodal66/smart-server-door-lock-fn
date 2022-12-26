@@ -7,7 +7,8 @@ import {useNavigate} from "react-router-dom";
 
 
 function LoginPage() {
-
+   
+  const history = useNavigate();
   const onSubmit = async (values, actions) => {
 
     console.log("The current value is :",values.email);
@@ -16,15 +17,18 @@ function LoginPage() {
     if(values.email === ExistingUsers[0].email && values.password === ExistingUsers[0].password){
       localStorage.setItem("UserEmail",`${values.email}`)
       localStorage.setItem("UserPassword",`${values.password}`)
-      history("/user-admin");
+      history("/user-dashboard");
+      window.location.reload();
     }else if(values.email === ExistingUsers[1].email && values.password === ExistingUsers[1].password){
       localStorage.setItem("UserEmail",`${values.email}`)
       localStorage.setItem("UserPassword",`${values.password}`)
       history("/admin-page");
+      window.location.reload();
     }
     else{
       alert("You are not allowed to open the server")
       history("/");
+      window.location.reload();
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
@@ -46,7 +50,7 @@ function LoginPage() {
     validationSchema: basicSchema,
     onSubmit,
   });
-  const history = useNavigate();
+  
 
 
   return (

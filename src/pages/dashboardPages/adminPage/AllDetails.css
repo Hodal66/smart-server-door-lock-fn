@@ -14,3 +14,10 @@
 .deatails-container span{
     font-weight: 100;
 }
+
+.disabledInput:hover{
+    cursor:progress;
+    background-color: red;
+    
+  }
+

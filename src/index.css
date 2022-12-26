@@ -6,6 +6,7 @@
   text-decoration: none;
   border:none;
   font-family: sans-serif;
+  transition:1s all 
 }
 :root{
   --color-primary: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));

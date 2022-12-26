@@ -28,13 +28,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function Logout() {
-    const age = "muheto"
     const emailLocalStorage = localStorage.getItem("UserEmail");
     const history =  useNavigate();
     console.log("Local storage value is", emailLocalStorage);
     const handleLogout=()=>{
         localStorage.clear();
         history("/")
+        window.location.reload();
        
     }
   return (
@@ -44,12 +44,12 @@ function Logout() {
   <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
-    value={age}
+    value="age"
     label="age"
     // onChange={handleChange}
   >
-    <MenuItem value={age} onClick={handleLogout}>logout</MenuItem>
-    <MenuItem value={age} defaultValue>{emailLocalStorage}</MenuItem>
+    <MenuItem value="age" onClick={handleLogout}>logout</MenuItem>
+    <MenuItem value="age" defaultValue>{emailLocalStorage}</MenuItem>
   </Select>
 </FormControl>}
       

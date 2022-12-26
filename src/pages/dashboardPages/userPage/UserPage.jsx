@@ -3,12 +3,14 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserSidebarDashBoard from '../../../components/sideBaer/UserSidebarDashBoard';
-
+import AlertDialog from './Dialog';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 function UserPage() {
-  const [empData, setEmpData] = useState("")
+  const [empData, setEmpData] = useState([])
+  const [dialog, setDialog]=useState(false);
   const navigate=useNavigate();
   useEffect(()=>{
-    fetch(" http://localhost:8000/serverRows").then((res)=>{return res.json()}).then((resp)=>{
+    fetch("http://localhost:8000/serverRows").then((res)=>{return res.json()}).then((resp)=>{
       setEmpData(resp);
     }).catch((err)=>{
       console.log(err.message);
@@ -18,18 +20,13 @@ function UserPage() {
 
   const goToSwitchServerOnOff =(event,id)=>{
     event.preventDefault();
-    navigate(`/server/${id}`)
+    navigate(`/switch-server/${id}`)
   }
   
   return (
     <div className='Usercontainer'>
        <UserSidebarDashBoard/>
       <div className="serverDashboardContainer ">
-        <Link to="/add-server-page">
-        <div className="addButton">
-          <button className="addServerButton">Add New Server  (+)</button>
-        </div>
-        </Link>
         <div className="serverDashboardContainer dataInTable">
 
             <table className="table table-bordered ">
@@ -45,11 +42,11 @@ function UserPage() {
                 { empData && empData.map(item=>(
                     <tr key={item.id}>
                       <td>{item.id}</td>
-                      <td>{item.serverName}</td>
-                      <td>{item.serverNo}</td>
+                      <td>{item.serverNameState}</td>
+                      <td>{item.serverCodeState}</td>
                       <td>
                         <React.Fragment>
-                          <a onClick={(event)=>goToSwitchServerOnOff(event,item.id)} className='btn btn-primary'>Switch Server</a>
+                          <a onClick={(event)=>goToSwitchServerOnOff(event,item.id)} ><ToggleOffIcon/><AlertDialog/></a>
                       </React.Fragment>
                       </td>
                     </tr>
@@ -57,6 +54,7 @@ function UserPage() {
                 }
               </tbody>
             </table>
+            
           </div>
           </div>
         </div>

@@ -146,6 +146,14 @@
       "userPassword": "11223344"
     },
     {
+      "id": 3,
+      "userName": "Mathiew JMV",
+      "avatar": "https://i.ytimg.com/vi/dvXNk8f-qek/maxresdefault.jpg",
+      "email": "jon@gmail.com",
+      "phone": "0782439775",
+      "userPassword": "11223344"
+    },
+    {
       "id": 4,
       "userName": "Mathiew JMV",
       "avatar": "https://i.ytimg.com/vi/dvXNk8f-qek/maxresdefault.jpg",
@@ -160,17 +168,6 @@
       "email": "jon@gmail.com",
       "phone": "0782439775",
       "userPassword": "11223344"
-    },
-    {
-      "id": 6
-    },
-    {
-      "userName": "muheto hodal",
-      "email": "mhthodol@gmail.com",
-      "avatar": {},
-      "phone": "3245678922",
-      "userPassword": "mth@gmail.com",
-      "id": 7
     }
   ],
   "loginUserContent": [

@@ -27,7 +27,7 @@ function UserAdmin() {
     event.preventDefault();
     if(window.confirm("Do you want to Remove ?"));
     
-    fetch(" http://localhost:8000/userRows"+id,{
+    fetch(" http://localhost:8000/userRows/"+id,{
       method: "DELETE",
 
     })
@@ -47,7 +47,7 @@ function UserAdmin() {
       <div className="serverDashboardContainer ">
         <Link to="/add-user-page">
         <div className="addButton">
-          <button className="addServerButton">Add User</button>
+          <button className="addServerButton">Add User (+) </button>
         </div>
         </Link>
         <div className="serverDashboardContainer dataInTable">

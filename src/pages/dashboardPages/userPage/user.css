@@ -13,3 +13,7 @@
     gap: 2rem;
 
 }
+.ServerImageContainer img{
+    width: 40%;
+    height: 10%;
+}

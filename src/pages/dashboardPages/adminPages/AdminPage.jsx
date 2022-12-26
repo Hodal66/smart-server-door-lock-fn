@@ -18,7 +18,9 @@ function AdminPage() {
   },[])
   const RemoveFunction =(event,id)=>{
     event.preventDefault();
-    if(window.confirm("Do you want to Remove ?"));
+    if(window.confirm("Do you want to Remove ?")){
+
+   
     
     fetch("http://localhost:8000/allDashboardContentRow/"+id,{
       method: "DELETE",
@@ -31,6 +33,9 @@ function AdminPage() {
 
       })
       .then((err) => {console.log(err.message)});
+    }else{
+      navigate("/")
+    }
   };
   
   
