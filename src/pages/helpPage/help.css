@@ -1,0 +1,80 @@
+.cardsConainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
+}
+#iframeContainer{
+    position:fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:1rem; 
+}
+.openAndClose{
+    display: flex;
+    flex-direction: column;
+
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 33%;
+    
+}
+.point{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    font-size: x-large;
+    font-weight: 900;
+    color: aliceblue;
+
+}
+.serverOFF{
+    
+    display: flex;
+}
+.on{
+    background-color: var(--primary-color)
+}
+#IdPoint1{
+    width: 50px;
+    height: 50px;
+    transition: all 0.2s;
+}
+#IdPoint2{
+    transition: all 0.5s;
+    width: 42.5px;
+    height: 42.5px;
+}
+#IdPoint3{
+    transition: all 0.8s;
+    width: 35px;
+    height: 35px;
+}
+#IdPoint4{
+    width: 35px;
+    height: 35px;
+    transition: all 1s;
+}
+#IdPoint5{
+    width: 42.5px;
+    transition: all 1.5s;
+    height: 42.5px;
+}
+#IdPoint6{
+    width: 50px;
+    height: 50px;
+    transition: all 2s;
+}
+.serverON{
+    display: flex;
+}
+.overIframe{
+    background-color: blue;
+}

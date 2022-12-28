@@ -8,7 +8,7 @@ function AdminServerDetails() {
     const {AllDetalsId}=useParams();
     console.log(AllDetalsId);
     useEffect(()=>{
-      fetch(" http://localhost:8000/allDashboardContentRow/"+AllDetalsId).then((res)=>{return res.json()}).then((resp)=>{
+      fetch(" http://localhost:5050/allDashboardContentRow/"+AllDetalsId).then((res)=>{return res.json()}).then((resp)=>{
         setAllDetails(resp);
       }).catch((err)=>{
         console.log(err.message);

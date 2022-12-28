@@ -11,7 +11,7 @@ function UserAdmin() {
   
   const navigate=useNavigate();
   useEffect(()=>{
-    fetch(" http://localhost:8000/userRows").then((res)=>{return res.json()}).then((resp)=>{
+    fetch(" http://localhost:5050/userRows").then((res)=>{return res.json()}).then((resp)=>{
         setServerContent(resp);
     }).catch((err)=>{
       console.log(err.message);
@@ -21,13 +21,13 @@ function UserAdmin() {
 
   const LoadEdit =(event,id)=>{
     event.preventDefault();
-    navigate(`/server/${id}`)
+    navigate(`/admin-user/update/${id}`)
   }
   const RemoveFunction =(event,id)=>{
     event.preventDefault();
     if(window.confirm("Do you want to Remove ?"));
     
-    fetch(" http://localhost:8000/userRows/"+id,{
+    fetch(" http://localhost:5050/userRows/"+id,{
       method: "DELETE",
 
     })

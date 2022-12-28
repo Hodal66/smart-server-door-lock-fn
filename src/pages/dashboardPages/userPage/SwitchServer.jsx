@@ -1,61 +1,87 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import "./user.css"
-import { useEffect, useState } from 'react'
-import {useNavigate } from 'react-router-dom'
-import UserSidebarDashBoard from '../../../components/sideBaer/UserSidebarDashBoard';
-import AlertDialog from './Dialog';
-import OpenServerImage from "../../../assets/images/OpenOpenServerImage.jpg"
-import CloseServerImage from "../../../assets/images/closeServerRack.jpg"
-import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+/* eslint-disable jsx-a11y/iframe-has-title */
+import React, { useState } from "react";
+import UserSidebarDashBoard from "../../../components/sideBaer/UserSidebarDashBoard";
+import "../../helpPage/help.css";
+import NextImage from "../../../assets/images/nextImage.jpg";
+import NextImageClick from "../../../assets/images/click.png";
+import OnOff from "../../../assets/images/on-and-off-toggle-switch-button-red-and-green-vector-14282624.jpg";
+import OffImage from "../../../assets/images/closedServerImage.jpg";
+import OnOffServer from "../../../assets/images/OpenOpenServerImage.jpg"
+
+
 function SwitchServer() {
-  const [empData, setEmpData] = useState([])
-  const [openServerImage, setOpenedServerImage]=useState(false);
-  const [controllButton, setControllButton]=useState(true);
-
-  const [dialog, setDialog]=useState(false);
-
-  const handleCloseAgree =(id)=>{
-    navigate(`/user-dashboard/${id}`)
-  }
-  const navigate=useNavigate();
-  useEffect(()=>{
-    fetch("http://localhost:8000/serverRows").then((res)=>{return res.json()}).then((resp)=>{
-      setEmpData(resp);
-    }).catch((err)=>{
-      console.log(err.message);
-    })
-  },[])
-
-
-  const handleOpenServer =()=>{
-    setOpenedServerImage(!openServerImage);
-  }
+  const [openServer, setOpenServer] = useState(true);
   return (
-    <div className='Usercontainer'>
-       <UserSidebarDashBoard/>
-      <div className="serverDashboardContainer ">
-        <div className="serverDashboardContainer dataInTable">
-              <h1>You are going to switch on</h1>
-              {openServerImage && <div className="ServerImageContainer">
-                <img src={OpenServerImage} alt="open-serverImage" />
-                <h2>Server is Open</h2>
+    <div className="Usercontainer">
+      <UserSidebarDashBoard />
+      <div className="openAndClose">
 
-              </div>}
-
-              {!openServerImage && <div className="ServerImageContainer">
-                <img src={CloseServerImage} alt="closed-serverImage" />
-                <h2>Server is Closed</h2>
-              </div>}
-              <div className="buttonContainer">
-             {!openServerImage && <div className="OpenButton btn btn-primary" onClick={handleOpenServer}>Open_Server</div> }
-
-                 {openServerImage&&<div className="closeButton btn btn-danger" onClick={handleOpenServer}>Close_Server</div>}
-              </div>
+     
+      <div
+        className="serverDashboardContainer cardsConainer iframeContainer"
+        id=""
+      >
+        {openServer ? (
+          <div className="card" style={{ width: "18rem", marginTop: "6rem" }}>
+            <img
+              className="card-img-top clikImage"
+              style={{ width: "18rem", height: "15rem" }}
+              src={OffImage}
+              alt="Card mage cap"
+            />
+            <div className="card-body serverON">
+              <div className="point" id="IdPoint1">1</div>
+              <div className="point" id="IdPoint2">2</div>
+              <div className="point" id="IdPoint3">3</div>
+              <div className="point" id="IdPoint4">4</div>
+              <div className="point" id="IdPoint5">5</div>
+              <div className="point" id="IdPoint6">6</div>
+            </div>
           </div>
+        ) : (
+          <div className="card" style={{ width: "18rem", marginTop: "6rem" }}>
+            <img
+              className="card-img-top clikImage"
+              style={{ width: "18rem", height: "15rem" }}
+              src={OnOffServer}
+              alt="Card mage cap"
+            />
+            <div className="card-body serverOFF">
+              <div className="point on " id="IdPoint1">1</div>
+              <div className="point on" id="IdPoint2">2</div>
+              <div className="point on" id="IdPoint3">3</div>
+              <div className="point on" id="IdPoint4">4</div>
+              <div className="point on" id="IdPoint5">5</div>
+              <div className="point on" id="IdPoint6">6</div>
+            </div>
           </div>
+        )}
+       
+         {
+          !openServer &&  
+          <div className="card" style={{ width: "40rem", marginTop: "6rem" }}>
+          <div className="overIframe"><iframe 
+          className="card"
+            src="http://192.168.137.81/"
+            alt="Card mage cap"
+           style={{height:"325px", width:"100%"}}
+          ></iframe>
+           </div>
         </div>
-  )
+         }
+         
+       
+        </div>
+        <div className="buttonContainer">
+          {openServer ? (
+            <button className="btn btn-danger" onClick={()=>setOpenServer(false)}>Turn ON Entry Way</button>
+          ) : (
+            <button className="btn btn-success" onClick={()=>setOpenServer(true)}>Turn OFF Entry Way</button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default SwitchServer
+export default SwitchServer;

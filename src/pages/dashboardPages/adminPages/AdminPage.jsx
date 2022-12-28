@@ -9,7 +9,7 @@ function AdminPage() {
   const navigate=useNavigate();
 
   useEffect(()=>{
-    fetch("http://localhost:8000/allDashboardContentRow").then((res)=>{return res.json()}).then((resp)=>{
+    fetch("http://localhost:5050/allDashboardContentRow").then((res)=>{return res.json()}).then((resp)=>{
       setEmpData(resp);
     }).catch((err)=>{
       console.log(err.message);
@@ -22,7 +22,7 @@ function AdminPage() {
 
    
     
-    fetch("http://localhost:8000/allDashboardContentRow/"+id,{
+    fetch("http://localhost:5050/allDashboardContentRow/"+id,{
       method: "DELETE",
 
     })

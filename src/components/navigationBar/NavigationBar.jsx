@@ -1,6 +1,5 @@
-import React ,{useState}from "react";
+import React from "react";
 import "./navigation.css";
-// import { useNavigate } from "react-router-dom";
 import StorageIcon from "@mui/icons-material/Storage";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
@@ -9,7 +8,6 @@ import { Button, ButtonGroup, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
 function NavigationBar() {
-  const [logout, setLogout]=useState("");
   const emailLocalStorage = localStorage.getItem("UserEmail");
 
   // let navigation = useNavigate();

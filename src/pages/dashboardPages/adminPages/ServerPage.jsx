@@ -8,7 +8,7 @@ function ServerPage() {
   const [serverContentState, setServerContentState] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(" http://localhost:8000/serverRows")
+    fetch(" http://localhost:5050/serverRows")
       .then((res) => {
         return res.json();
       })
@@ -28,7 +28,7 @@ function ServerPage() {
     event.preventDefault();
     if (window.confirm("Do you want to Remove ?"));
 
-    fetch(" http://localhost:8000/serverRows/" + id, {
+    fetch(" http://localhost:5050/serverRows/" + id, {
       method: "DELETE",
     })
       .then((res) => {

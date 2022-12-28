@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../user.css";
 import loginPageBackGroundImage from "../../../assets/images/LoginBackgroundImage.png";
 import { useFormik } from "formik";
@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 
 
 function LoginPage() {
-   
+   const [content, setContent]=useState([]);
   const history = useNavigate();
   const onSubmit = async (values, actions) => {
 
@@ -24,6 +24,15 @@ function LoginPage() {
       localStorage.setItem("UserPassword",`${values.password}`)
       history("/admin-page");
       window.location.reload();
+    }else if( fetch("http://localhost:5050/allDashboardContentRow").then((res)=>{return res.json()}).then((resp)=>{
+      setContent(resp.email);
+      if(content.includes(resp.email)){
+        history("/user-dashboard");
+      }
+    }).catch((err)=>{
+      console.log(err.message);
+    })){
+
     }
     else{
       alert("You are not allowed to open the server")

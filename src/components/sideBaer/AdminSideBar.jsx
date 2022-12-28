@@ -1,7 +1,7 @@
 import React from "react";
 import StorageIcon from "@mui/icons-material/Storage";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import { Link } from "react-router-dom";
 function AdminSideBar() {
   return (
@@ -16,7 +16,7 @@ function AdminSideBar() {
         </Link>
         <Link to="/server-admin" >
         <div  className="serverIconContainer AdminIcon">
-          <StorageIcon />
+          <StorageIcon className="iconn"/>
           <p>Server</p>
         </div>
         </Link>
@@ -28,10 +28,7 @@ function AdminSideBar() {
         </div>
         </Link>
 
-        <div className="userIconContainer AdminIcon">
-          <AdminPanelSettingsIcon />
-          <p>Settings</p>
-        </div>
+
       </section>
     </div>
   );

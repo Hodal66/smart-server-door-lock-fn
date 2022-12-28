@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import UserSidebarDashBoard from '../../../components/sideBaer/UserSidebarDashBoard';
 import AlertDialog from './Dialog';
 import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 function UserPage() {
   const [empData, setEmpData] = useState([])
-  const [dialog, setDialog]=useState(false);
   const navigate=useNavigate();
   useEffect(()=>{
-    fetch("http://localhost:8000/serverRows").then((res)=>{return res.json()}).then((resp)=>{
+    fetch("http://localhost:5050/serverRows").then((res)=>{return res.json()}).then((resp)=>{
       setEmpData(resp);
     }).catch((err)=>{
       console.log(err.message);
@@ -46,7 +45,7 @@ function UserPage() {
                       <td>{item.serverCodeState}</td>
                       <td>
                         <React.Fragment>
-                          <a onClick={(event)=>goToSwitchServerOnOff(event,item.id)} ><ToggleOffIcon/><AlertDialog/></a>
+                          <a onClick={(event)=>goToSwitchServerOnOff(event,item.id)} ><AlertDialog/></a>
                       </React.Fragment>
                       </td>
                     </tr>

@@ -14,7 +14,7 @@ function AddServerPage() {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-   fetch("http://localhost:8000/serverRows",{
+   fetch("http://localhost:5050/serverRows",{
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(addedServerContent),

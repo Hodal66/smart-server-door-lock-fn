@@ -20,6 +20,8 @@ import LoginPage from "./pages/users/loginPage/LoginPage";
 import UserPage from "./pages/dashboardPages/userPage/UserPage";
 import AdminServerDetails from "./pages/dashboardPages/adminPage/AdminServerDetails";
 import SwitchServer from "./pages/dashboardPages/userPage/SwitchServer";
+import UpdateUser from "./pages/dashboardPages/adminPage/UpdateUser";
+import HelpPage from "./pages/helpPage/HelpPage";
 
 function App() {
   return (
@@ -36,12 +38,16 @@ function App() {
           <Route path="/add-server-page" element={<AddServerPage/>} />
           <Route path="/add-user-page" element={<AddUserPage/>} />
           <Route path="/admin-server/details/:AllDetalsId" element={<AdminServerDetails/>} />
+          <Route path="/admin-user/update/:AllDetalsId" element={<UpdateUser/>} />
           <Route path="/user-admin" element={<UserAdmin/>} />
           <Route path="/server/:editServerId" element={<EditServer />} />
+          <Route path="/help" element={<HelpPage />} />
+
 
           {/* USER PART ROUTE */}
           <Route path="/user-dashboard" element={<UserPage/>} />
           <Route path="/switch-server/:serverId" element={<SwitchServer/>} />
+
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>

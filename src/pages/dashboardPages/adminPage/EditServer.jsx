@@ -12,7 +12,7 @@ function EditServer() {
   const {editServerId}=useParams();
   console.log(editServerId);
   useEffect(()=>{
-    fetch(" http://localhost:8000/serverRows/"+editServerId).then((res)=>{return res.json()}).then((resp)=>{
+    fetch(" http://localhost:5050/serverRows/"+editServerId).then((res)=>{return res.json()}).then((resp)=>{
       setServerId(resp.id);
       setServerNameState(resp.serverNameState);
       setServerCodeState(resp.serverCodeState);
@@ -29,7 +29,7 @@ function EditServer() {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-   fetch("http://localhost:8000/serverRows/"+editServerId,{
+   fetch("http://localhost:5050/serverRows/"+editServerId,{
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(addedServerContent),
@@ -79,7 +79,7 @@ function EditServer() {
                     onMouseDown={(e)=>setValidation(true)}
                     onChange={(e)=>setServerNameState(e.target.value)}
                   />
-                  {serverNameState.length===0 && validation && <p className="text-danger">Enter Server Name</p>}
+                  {/* {serverNameState.length===0 && validation && <p className="text-danger">Enter Server Name</p>} */}
                 </div>
                 <div className="inputContainer serverCode">
                   <label htmlFor="serverCode">Server Code <span className="text-danger">(*)</span></label>
@@ -94,12 +94,12 @@ function EditServer() {
                     onChange={(e)=>setServerCodeState(e.target.value)}
                   />
                  
-                  {(serverCodeState.length === 0 || serverCodeState.length !==6)&& validation && <p className="text-danger">Enter Server Code must 5 digits</p>}
+                  {/* {(serverCodeState.length === 0 || serverCodeState.length !==6)&& validation && <p className="text-danger">Enter Server Code must 5 digits</p>} */}
                 </div>
                 <input
-                              type="submit"
-                              className="form-control btn btn-primary"
-                              value="Add"
+                  type="submit"
+                  className="form-control btn btn-primary"
+                  value="Add"
                             />
               </div>
             
