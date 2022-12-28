@@ -7,10 +7,44 @@ import NextImageClick from "../../../assets/images/click.png";
 import OnOff from "../../../assets/images/on-and-off-toggle-switch-button-red-and-green-vector-14282624.jpg";
 import OffImage from "../../../assets/images/closedServerImage.jpg";
 import OnOffServer from "../../../assets/images/OpenOpenServerImage.jpg"
+import axios from "axios";
+import moment from "moment/moment";
+import { useParams } from "react-router-dom";
 
 
 function SwitchServer() {
-  const [openServer, setOpenServer] = useState(true);
+  const [openServer, setOpenServer] = useState(false);
+  const params = useParams();
+
+
+  const turnSurverOn = ()=>{
+
+    axios.get("http://192.168.1.67/Req=30");
+    log('open');
+
+
+
+    setOpenServer(true)
+
+  }
+
+
+  const turnSurverOff = ()=>{
+    axios.get("http://192.168.1.67/Req=180");
+    setOpenServer(false)
+    log('close');
+  }
+
+
+  const log = (action)=>{
+
+    const timeStamp = moment().format('DD/MM/YYYY HH:mm:ss');
+    const user = localStorage.getItem("UserEmail");
+    const server = params.serverId;
+    axios.post('http://localhost:5050/logs',{timeStamp,user,server,action})
+
+  }
+
   return (
     <div className="Usercontainer">
       <UserSidebarDashBoard />
@@ -57,26 +91,13 @@ function SwitchServer() {
           </div>
         )}
        
-         {
-          !openServer &&  
-          <div className="card" style={{ width: "40rem", marginTop: "6rem" }}>
-          <div className="overIframe"><iframe 
-          className="card"
-            src="http://192.168.137.81/"
-            alt="Card mage cap"
-           style={{height:"325px", width:"100%"}}
-          ></iframe>
-           </div>
-        </div>
-         }
          
-       
         </div>
         <div className="buttonContainer">
-          {openServer ? (
-            <button className="btn btn-danger" onClick={()=>setOpenServer(false)}>Turn ON Entry Way</button>
+          {!openServer ? (
+            <button className="btn btn-danger" onClick={turnSurverOn}>Turn ON Entry Way</button>
           ) : (
-            <button className="btn btn-success" onClick={()=>setOpenServer(true)}>Turn OFF Entry Way</button>
+            <button className="btn btn-success" onClick={turnSurverOff}>Turn OFF Entry Way</button>
           )}
         </div>
       </div>

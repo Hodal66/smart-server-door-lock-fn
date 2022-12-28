@@ -1,44 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../user.css";
 import loginPageBackGroundImage from "../../../assets/images/LoginBackgroundImage.png";
 import { useFormik } from "formik";
-import { basicSchema, ExistingUsers } from "./Schema";
+import { basicSchema } from "./Schema";
 import {useNavigate} from "react-router-dom";
+import axios from 'axios';
+
 
 
 function LoginPage() {
    const [content, setContent]=useState([]);
+   const [ExistingUsers,setExistingUsers] = useState([]);
+
+   
+
+   const fetchAllUser = async()=>{
+    const {data} =  await axios.get("http://localhost:5050/userRows");
+    console.log(data)
+    setExistingUsers(data)
+   }
+
+   useEffect(()=>{
+      fetchAllUser();
+   },[content])
   const history = useNavigate();
+
+
+
   const onSubmit = async (values, actions) => {
+
+    const emailExist = ExistingUsers.find(user=>user.email===values.email);
+    if(emailExist){
+      const passwordisTrue = emailExist.userPassword===values.password ? true :false;
+      console.log(emailExist)
+      if(passwordisTrue){
+        const redirectUrl = emailExist.role==="ADMIN" ? "/admin-page" :"/user-dashboard";
+        localStorage.setItem("UserEmail",values.email)
+        localStorage.setItem("UserPassword",values.password)
+        history(redirectUrl);
+        window.location.reload();
+      }else{
+        alert("Wrong inputs");
+      }
+
+    }else{
+      alert("Wrong inputs ");
+    }
 
     console.log("The current value is :",values.email);
     console.log("The current Password is : ",values.password);
   
-    if(values.email === ExistingUsers[0].email && values.password === ExistingUsers[0].password){
-      localStorage.setItem("UserEmail",`${values.email}`)
-      localStorage.setItem("UserPassword",`${values.password}`)
-      history("/user-dashboard");
-      window.location.reload();
-    }else if(values.email === ExistingUsers[1].email && values.password === ExistingUsers[1].password){
-      localStorage.setItem("UserEmail",`${values.email}`)
-      localStorage.setItem("UserPassword",`${values.password}`)
-      history("/admin-page");
-      window.location.reload();
-    }else if( fetch("http://localhost:5050/allDashboardContentRow").then((res)=>{return res.json()}).then((resp)=>{
-      setContent(resp.email);
-      if(content.includes(resp.email)){
-        history("/user-dashboard");
-      }
-    }).catch((err)=>{
-      console.log(err.message);
-    })){
-
-    }
-    else{
-      alert("You are not allowed to open the server")
-      history("/");
-      window.location.reload();
-    }
+    
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };

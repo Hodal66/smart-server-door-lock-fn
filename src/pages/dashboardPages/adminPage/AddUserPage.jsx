@@ -10,6 +10,7 @@ function AddUserPage() {
  const [email, setEmailState] = useState("");
  const [userPassword, setUserPassword]=useState("");
  const [phone, setPhoneState] = useState("");
+ const[role,setRole] = useState("USER");
  const [validation, setValidation]=useState("");
 
  const history = useNavigate();
@@ -17,7 +18,7 @@ function AddUserPage() {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     
-    const userContentState = {userName, email, phone, userPassword};
+    const userContentState = {userName, email, phone, userPassword,role};
     
    fetch("http://localhost:5050/userRows",{
     method:"POST",
