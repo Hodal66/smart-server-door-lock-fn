@@ -46,7 +46,7 @@ function ServerPage() {
       <div className="serverDashboardContainer ">
         <Link to="/add-server-page">
           <div className="addButton">
-            <button className="addServerButton">Add New Server (+)</button>
+            <button className="addServerButton btn btn-primary" style={{color:"white"}}>Add New Server (+)</button>
           </div>
         </Link>
         <div className="serverDashboardContainer dataInTable">

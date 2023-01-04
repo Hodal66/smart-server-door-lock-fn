@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navigation.css";
 import StorageIcon from "@mui/icons-material/Storage";
-import NightlightIcon from "@mui/icons-material/Nightlight";
-import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
-import InfoIcon from "@mui/icons-material/Info";
 import { Button, ButtonGroup, IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logout from "./Logout";
+import RedoIcon from '@mui/icons-material/Redo';
+import AddHomeWorkIcon from '@mui/icons-material/AddHomeWork';
 function NavigationBar() {
+  const [checkRedirection, setCheckRedition]=useState(false);
   const emailLocalStorage = localStorage.getItem("UserEmail");
 
-  // let navigation = useNavigate();
+   let navigation = useNavigate();
+
+  const handleRedirection =()=>{
+if(emailLocalStorage === "mhthodol@gmail.com"){
+  navigation("/main-admin")
+}else if(!emailLocalStorage){
+  alert("Please Login First")
+  
+}else{
+  navigation("/user-dashboard")
+}
+   
+  }
+  const handleHomeRedirection =()=>{
+    navigation("/")
+  }
 
   return (
     <div className="NavigationContainer">
@@ -22,7 +37,7 @@ function NavigationBar() {
                 aria-label="NightlightIcon"
                 className="NightlightIcon"
               >
-                <StorageIcon className="logoIcon" />
+                <StorageIcon className="logoIcon" style={{color:"white"}} />
               </IconButton>
             </ButtonGroup>
           </div>
@@ -37,40 +52,28 @@ function NavigationBar() {
       </div>
 
       <div className="rightSideNavContainer">
-        <ButtonGroup
-          size="small"
-          variant="text"
-          padding="2rem"
-          aria-label="outlined primary button group"
-          className="homeIconsContainer"
-        >
-          <Link to="/user-dashboard">
-          <div className="darkModeIcon">
-            <IconButton aria-label="NightlightIcon">
-              <NightlightIcon className="icon" />
-            </IconButton>
-          </div>
-          </Link>
-          <div className="homeIcon">
-            <Link to="/admin-page">
-              <IconButton aria-label="AddHomeWorkIcon">
-                <AddHomeWorkIcon className="icon" />
+        <div className="redo__Icon">
+        <ButtonGroup size="large">
+              <IconButton
+                aria-label="NightlightIcon"
+                className="NightlightIcon"
+              >
+                <AddHomeWorkIcon className="logoIcon" onClick={handleHomeRedirection} style={{color:"white"}}/>
               </IconButton>
-            </Link>
-            {/* <p>Home</p> */}
-          </div>
-          <div className="aboutUsIcon">
-            <Link to="/register-page">
-            <IconButton aria-label="InfoIcon">
-              <InfoIcon className="icon" />
-            </IconButton>
-            </Link>
-
-            {/* <p>About Us</p> */}
-          </div>
+              
+            </ButtonGroup>
+            <ButtonGroup size="large">
+              <IconButton
+                aria-label="NightlightIcon"
+                className="NightlightIcon"
+              >
+                <RedoIcon className="logoIcon" onClick={handleRedirection} style={{color:"white"}}/>
+              </IconButton>
+              
+            </ButtonGroup>
+          
+        </div>
           <div className="goToLoginPage">
-           
-            
               {emailLocalStorage ? <Button variant="contained" className="loginButton">
               <Logout/>
               </Button>:
@@ -80,7 +83,7 @@ function NavigationBar() {
               </Button>
             </Link> }
           </div>
-        </ButtonGroup>
+    
       </div>
     </div>
   );

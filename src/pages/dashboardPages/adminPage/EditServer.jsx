@@ -93,16 +93,14 @@ function EditServer() {
                     onMouseDown={(e)=>setValidation(true)}
                     onChange={(e)=>setServerCodeState(e.target.value)}
                   />
-                 
                   {/* {(serverCodeState.length === 0 || serverCodeState.length !==6)&& validation && <p className="text-danger">Enter Server Code must 5 digits</p>} */}
                 </div>
                 <input
                   type="submit"
                   className="form-control btn btn-primary"
-                  value="Add"
+                  value="Update Server"
                             />
               </div>
-            
             </form>
           </div>
         </div>

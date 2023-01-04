@@ -7,7 +7,7 @@ import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import { Link } from "react-router-dom";
 function UserSidebarDashBoard() {
   return (
-    <div>
+    <div>  
       <section className="sideBarContainer">
         <Link to="/user-dashboard">
         <div className="adminTextContainer AdminIcon">
@@ -28,7 +28,6 @@ function UserSidebarDashBoard() {
           <p>Help</p>
         </div>
         </Link>
-        
       </section>
     </div>
   );

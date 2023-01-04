@@ -2,9 +2,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom'
-import UserSidebarDashBoard from '../../../components/sideBaer/UserSidebarDashBoard';
-import AlertDialog from './Dialog';
-function UserPage() {
+import AdminSideBar from '../../../components/sideBaer/AdminSideBar';
+import AlertDialog from '../userPage/Dialog';
+function AdminAdminPage() {
   const [empData, setEmpData] = useState([])
   const navigate=useNavigate();
   useEffect(()=>{
@@ -13,18 +13,16 @@ function UserPage() {
     }).catch((err)=>{
       console.log(err.message);
     })
-
   },[])
 
   const goToSwitchServerOnOff =(event,id)=>{
     event.preventDefault();
-    navigate(`/switch-server/${id}`)
+    navigate(`/switch-server-admin/${id}`)
   }
   
   return (
-    <div className='Usercontainer'>
-       <UserSidebarDashBoard/>
-      <div className="serverDashboardContainer ">
+    
+     
         <div className="serverDashboardContainer dataInTable">
 
             <table className="table table-bordered ">
@@ -54,40 +52,9 @@ function UserPage() {
             </table>
             
           </div>
-          </div>
-        </div>
+     
+  
   )
 }
 
-export default UserPage
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
-
-
-// function ServerPage() {
-  
-
-
-  
-//   return (
-//     <div className="Usercontainer">
-//       <AdminSideBar/>
-      
-//     </div>
-//   );
-// }
-
-// export default ServerPage;
+export default AdminAdminPage
