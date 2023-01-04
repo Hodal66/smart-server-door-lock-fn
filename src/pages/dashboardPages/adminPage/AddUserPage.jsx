@@ -4,13 +4,12 @@ import "react-toastify/dist/ReactToastify.css";
 import {useNavigate} from "react-router-dom";
 import AdminSideBar from "../../../components/sideBaer/AdminSideBar";
 
-
 function AddUserPage() {
  const [userName, setUserNameState]=useState("");
  const [email, setEmailState] = useState("");
  const [userPassword, setUserPassword]=useState("");
  const [phone, setPhoneState] = useState("");
- const[role,setRole] = useState("USER");
+ const[role] = useState("USER");
  const [validation, setValidation]=useState("");
 
  const history = useNavigate();
@@ -61,7 +60,7 @@ function AddUserPage() {
                 <div className="inputContainer userPassword">
                   <label htmlFor="userPassword">User Password</label>
                   <input
-                    type="text"
+                    type="password"
                     name="userPassword"
                     id="userPassword"
                     className="userPassword"
@@ -91,7 +90,7 @@ function AddUserPage() {
                 <div className="inputContainer phone">
                   <label htmlFor="phone"> Phone Number:</label>
                   <input
-                    type="phone"
+                    type="number"
                     name="phone"
                     id="phone"
                     className="phoneContact"
@@ -99,7 +98,7 @@ function AddUserPage() {
                     value={phone}
                     onChange={(e)=>setPhoneState(e.target.value)}
                   />
-                   {(phone.length === 0 || phone.length !==10)
+                   {(phone.length === 0 || phone.length !==10 )
                     && validation && <p className="text-danger">Enter valid Phone Number</p>}
                 </div>
               

@@ -11,10 +11,8 @@ function Logout() {
         localStorage.clear();
         history("/")
         window.location.reload();
-       
     }
   return (
-
     <div>
         {emailLocalStorage&&<FormControl fullWidth>
   <Select

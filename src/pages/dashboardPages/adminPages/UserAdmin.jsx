@@ -17,8 +17,8 @@ function UserAdmin() {
       console.log(err.message);
     })
 
-  },[])
-
+  },[]);
+  
   const LoadEdit =(event,id)=>{
     event.preventDefault();
     navigate(`/admin-user/update/${id}`)
@@ -26,7 +26,9 @@ function UserAdmin() {
   const RemoveFunction =(event,id)=>{
     event.preventDefault();
     if(window.confirm("Do you want to Remove ?"));
-    
+    if(id ===1){
+      alert("This is your user credentials Yo can't delete it")
+    }else{
     fetch(" http://localhost:5050/userRows/"+id,{
       method: "DELETE",
 
@@ -38,6 +40,7 @@ function UserAdmin() {
       })
       .then((err) => {console.log(err.message)});
   };
+}
   
 
   return (
@@ -47,7 +50,7 @@ function UserAdmin() {
       <div className="serverDashboardContainer ">
         <Link to="/add-user-page">
         <div className="addButton">
-          <button className="addServerButton">Add User (+) </button>
+          <button  className="addServerButton btn btn-primary" style={{color:"white"}}>Add User (+) </button>
         </div>
         </Link>
         <div className="serverDashboardContainer dataInTable">
@@ -65,7 +68,7 @@ function UserAdmin() {
                 { serverContent && serverContent.map(item=>(
                     <tr key={item.id}>
                       <td>{item.id}</td>
-                      <td><div className="userListContainer"><span><img src={item.avatar}/></span><span></span>{item.userName}</div></td>
+                      <td><div className="userListContainer">{item.userName}</div></td>
                       <td>{item.email}</td>
                       <td>{item.phone}</td>
                       <td>

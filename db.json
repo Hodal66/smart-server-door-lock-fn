@@ -1,13 +1,14 @@
 {
   "serverRows": [
     {
-      "serverNameState": "server 2",
+      "serverId": 2,
+      "serverNameState": "server 20",
       "serverCodeState": "345676",
       "id": 2
     },
     {
       "serverId": 3,
-      "serverNameState": "qwerqe",
+      "serverNameState": "server2300",
       "serverCodeState": "336666",
       "id": 3
     },
@@ -21,117 +22,49 @@
       "serverNameState": "server 2",
       "serverCodeState": "345676",
       "id": 6
-    }
-  ],
-  "allDashboardContentRow": [
-    {
-      "id": 2,
-      "userName": "Umwiza joella",
-      "avatar": "https://inyarwanda.com/app/webroot/img/202202/images/medium_thumbs/photo-6-6157661644957012.jpg",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "serverNo": "24033",
-      "serverName": "server2020",
-      "openedDate": "20-02-2022",
-      "closedDate": "03-11-2022"
     },
     {
-      "id": 3,
-      "userName": "Umwiza joella",
-      "avatar": "https://inyarwanda.com/app/webroot/img/202202/images/medium_thumbs/photo-6-6157661644957012.jpg",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "serverNo": "24033",
-      "serverName": "server2020",
-      "openedDate": "20-02-2022",
-      "closedDate": "03-11-2022"
-    },
-    {
-      "id": 5,
-      "userName": "Umwiza joella",
-      "avatar": "https://inyarwanda.com/app/webroot/img/202202/images/medium_thumbs/photo-6-6157661644957012.jpg",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "serverNo": "24033",
-      "serverName": "server2020",
-      "openedDate": "20-02-2022",
-      "closedDate": "03-11-2022"
-    },
-    {
-      "id": 6,
-      "userName": "Mugeni Keza",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRff-JZvSvUIuoIILVU2Ue1vJKgMQ4OJLGYaA&usqp=CAU",
-      "email": "jon@gmail.com",
-      "status": "active",
-      "serverNo": "24033",
-      "serverName": "server2020",
-      "openedDate": "20-02-2022",
-      "closedDate": "03-11-2022"
+      "serverNameState": "server 300",
+      "serverCodeState": "303040",
+      "id": 7
     }
   ],
   "userRows": [
     {
       "allDetails": [],
-      "userName": "Mugeni Keza",
-      "email": "jon@gmail.com",
-      "phone": "23445678",
-      "userPassword": "Umuti-123!!",
-      "id": 6,
+      "userName": "Umwiza EEE",
+      "email": "mhthodol@gmail.com",
+      "phone": "45678947666",
+      "userPassword": "Mhthodol@2022%",
+      "id": 1,
       "role": "ADMIN"
     },
     {
-      "userName": "Gilbert",
-      "email": "gilbert@gmail.com",
-      "phone": "1234567899",
-      "userPassword": "Gilbert2022",
-      "id": 8,
-      "role": "USER"
-    },
-    {
-      "userName": "UMUHIRE",
-      "email": "muhire416@gmail.com",
-      "phone": "0786910057",
-      "userPassword": "Heritier@123",
+      "userName": "claude Niyigaba",
+      "email": "claude@gmail.com",
+      "phone": "1234567888",
+      "userPassword": "Claude@2022%",
       "role": "USER",
-      "id": 9
-    }
-  ],
-  "loginUserContent": [
-    {
-      "email": "mhthodol@gmail.com",
-      "password": "Mhthhodol@2022%"
+      "id": 3
     },
     {
-      "email": "admin",
-      "password": "1234"
+      "userName": "Umwiza Denis",
+      "email": "umwiza@gmail.com",
+      "phone": "1234567890",
+      "userPassword": "Umwiza@2022%",
+      "role": "USER",
+      "id": 4
     },
     {
-      "email": "claude",
-      "password": "clause123"
+      "userName": "Uwase",
+      "email": "1234@gmail.com",
+      "phone": "strato",
+      "userPassword": "12345",
+      "role": "USER",
+      "id": 5
     }
   ],
   "logs": [
-    {
-      "timeStamp": "29/12/2022 01:12:54",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 1
-    },
-    {
-      "timeStamp": "29/12/2022 01:12:57",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 2
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:25",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 3
-    },
     {
       "timeStamp": "29/12/2022 01:15:27",
       "user": "muhire416@gmail.com",
@@ -154,102 +87,32 @@
       "id": 6
     },
     {
-      "timeStamp": "29/12/2022 01:15:29",
-      "user": "muhire416@gmail.com",
+      "timeStamp": "04/01/2023 18:38:48",
+      "user": "mhthodol@gmail.com",
       "server": "2",
       "action": "open",
       "id": 7
     },
     {
-      "timeStamp": "29/12/2022 01:15:30",
-      "user": "muhire416@gmail.com",
+      "timeStamp": "04/01/2023 18:40:41",
+      "user": "mhthodol@gmail.com",
       "server": "2",
       "action": "close",
       "id": 8
     },
     {
-      "timeStamp": "29/12/2022 01:15:31",
-      "user": "muhire416@gmail.com",
+      "timeStamp": "04/01/2023 18:42:03",
+      "user": "mhthodol@gmail.com",
       "server": "2",
       "action": "open",
       "id": 9
     },
     {
-      "timeStamp": "29/12/2022 01:15:31",
-      "user": "muhire416@gmail.com",
+      "timeStamp": "04/01/2023 18:42:08",
+      "user": "mhthodol@gmail.com",
       "server": "2",
       "action": "close",
       "id": 10
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:31",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 11
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:31",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 12
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 13
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 14
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 15
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 16
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 17
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:32",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 18
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:33",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "open",
-      "id": 19
-    },
-    {
-      "timeStamp": "29/12/2022 01:15:33",
-      "user": "muhire416@gmail.com",
-      "server": "2",
-      "action": "close",
-      "id": 20
     }
   ]
 }

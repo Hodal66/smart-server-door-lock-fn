@@ -34,7 +34,7 @@ function LoginPage() {
       const passwordisTrue = emailExist.userPassword===values.password ? true :false;
       console.log(emailExist)
       if(passwordisTrue){
-        const redirectUrl = emailExist.role==="ADMIN" ? "/admin-page" :"/user-dashboard";
+        const redirectUrl = emailExist.role==="ADMIN" ? "/main-admin" :"/user-dashboard";
         localStorage.setItem("UserEmail",values.email)
         localStorage.setItem("UserPassword",values.password)
         history(redirectUrl);

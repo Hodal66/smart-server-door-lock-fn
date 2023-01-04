@@ -71,7 +71,6 @@ function UdateUser() {
                     disabled="disabled"
                     className="bg-secondary"
                   />
-                
                 </div>
                 <div className="inputContainer userName">
                   <label htmlFor="userName">User Name</label>
